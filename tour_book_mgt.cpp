@@ -59,7 +59,21 @@ class BookingList {
                 cout << "Booking not found!\n";
             }
         }
+        
     };
+
+// Update a tour
+void updateTour(int id, string destination, string date, int availableSeats) {
+    Tour* tour = searchTour(id);
+    if (tour) {
+        tour->destination = destination;
+        tour->date = date;
+        tour->availableSeats = availableSeats;
+        cout << "Tour updated successfully!\n";
+    } else {
+        cout << "Tour not found!\n";
+    }
+}
 
 
 int main(){
