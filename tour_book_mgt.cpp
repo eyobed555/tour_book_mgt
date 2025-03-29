@@ -65,6 +65,7 @@ class BookingList {
             } else {
                 cout << "Booking not found!\n";
             }
+        }
         //To display booking
         void displayBookings() {
             if (!head) {
@@ -110,6 +111,21 @@ void updateTour(int id, string destination, string date, int availableSeats) {
     } else {
         cout << "Tour not found!\n";
     }
+}
+
+//To delete tour
+void deleteTour(int id) {
+    for (int i = 0; i < tourCount; i++) {
+        if (tours[i].id == id) {
+            for (int j = i; j < tourCount - 1; j++) {
+                tours[j] = tours[j + 1];
+            }
+            tourCount--;
+            cout << "Tour deleted successfully!\n";
+            return;
+        }
+    }
+    cout << "Tour not found!\n";
 }
 
 int main(){
