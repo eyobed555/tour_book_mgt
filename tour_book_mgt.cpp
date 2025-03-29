@@ -90,6 +90,16 @@ void addTour(int id, string destination, string date, int availableSeats) {
     cout << "Tour added successfully!\n";
 }
 
+// Search for a tour by ID
+Tour* searchTour(int id) {
+    for (int i = 0; i < tourCount; i++) {
+        if (tours[i].id == id) {
+            return &tours[i];
+        }
+    }
+    return nullptr;
+}
+
 int main(){
     BookingList bookings;
     int choice;
