@@ -18,7 +18,7 @@ class BookingList {
     
     public:
         BookingList() : head(nullptr) {}
-        //To add booking
+        //To add booking 
         void addBooking(int bookingId, string customerName, int tourId) {
             Booking* newBooking = new Booking{bookingId, customerName, tourId, nullptr};
             if (!head) {
@@ -33,7 +33,7 @@ class BookingList {
             cout << "Booking added successfully!\n";
         }
 
-        //To cancel booking
+        //To cancel booking 
         void cancelBooking(int bookingId) {
             if (!head) {
                 cout << "No bookings found!\n";
@@ -57,6 +57,18 @@ class BookingList {
                 cout << "Booking canceled successfully!\n";
             } else {
                 cout << "Booking not found!\n";
+            }
+        }
+        //To display booking
+        void displayBookings() {
+            if (!head) {
+                cout << "No bookings found!\n";
+                return;
+            }
+            Booking* temp = head;
+            while (temp) {
+                cout << "Booking ID: " << temp->bookingId << ", Customer: " << temp->customerName << ", Tour ID: " << temp->tourId << "\n";
+                temp = temp->next;
             }
         }
     };
