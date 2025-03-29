@@ -146,13 +146,71 @@ int main(){
 
     do {
         cout << "\nTour Booking & Travel Package Management\n";
-        cout << "1. Book Tour\n";
-        cout << "2. Cancel Booking\n";
-        cout << "20. Exit\n";
+        cout << "1. Add Tour\n";
+        cout << "2. Search Tour\n";
+        cout << "3. Update Tour\n";
+        cout << "4. Delete Tour\n";
+        cout << "5. Display Tours\n";
+        cout << "6. Book Tour\n";
+        cout << "7. Cancel Booking\n";
+        cout << "8. Display Bookings\n";
+        cout << "9. Exit\n";
         cout << "Enter your choice: ";
         cin >> choice;
+
         switch (choice) {
             case 1: {
+                int id, seats;
+                string destination, date;
+                cout << "Enter Tour ID: ";
+                cin >> id;
+                cout << "Enter Destination: ";
+                cin >> destination;
+                cout << "Enter Date: ";
+                cin >> date;
+                cout << "Enter Available Seats: ";
+                cin >> seats;
+                addTour(id, destination, date, seats);
+                break;
+            }
+            case 2: {
+                int id;
+                cout << "Enter Tour ID to search: ";
+                cin >> id;
+                Tour* tour = searchTour(id);
+                if (tour) {
+                    cout << "Tour Found: " << tour->destination << " on " << tour->date << "\n";
+                } else {
+                    cout << "Tour not found!\n";
+                }
+                break;
+            }
+            case 3: {
+                int id, seats;
+                string destination, date;
+                cout << "Enter Tour ID to update: ";
+                cin >> id;
+                cout << "Enter New Destination: ";
+                cin >> destination;
+                cout << "Enter New Date: ";
+                cin >> date;
+                cout << "Enter New Available Seats: ";
+                cin >> seats;
+                updateTour(id, destination, date, seats);
+                break;
+            }
+            case 4: {
+                int id;
+                cout << "Enter Tour ID to delete: ";
+                cin >> id;
+                deleteTour(id);
+                break;
+            }
+            case 5: {
+                displayTours();
+                break;
+            }
+            case 6: {
                 int bookingId, tourId;
                 string customerName;
                 cout << "Enter Booking ID: ";
@@ -164,18 +222,27 @@ int main(){
                 bookings.addBooking(bookingId, customerName, tourId);
                 break;
             }
-            case 2: {
+            case 7: {
                 int bookingId;
                 cout << "Enter Booking ID to cancel: ";
                 cin >> bookingId;
                 bookings.cancelBooking(bookingId);
                 break;
             }
+            case 8: {
+                bookings.displayBookings();
+                break;
+            }
+            case 9: {
+                cout << "Exiting...\n";
+                break;
+            }
             default: {
                 cout << "Invalid choice! Try again.\n";
             }
-            }
-        } while (choice != 20);
+
+        }
+    } while (choice != 9);
     
     return 0;
 }
