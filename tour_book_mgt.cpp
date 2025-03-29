@@ -2,6 +2,13 @@
 #include <string>
 using namespace std;
 
+// Structure for Tour
+struct Tour {
+    int id;
+    string destination;
+    string date;
+    int availableSeats;
+};
 
 // Structure for Booking
 struct Booking {
@@ -61,6 +68,15 @@ class BookingList {
         }
     };
 
+// Array for Tours
+Tour tours[100];
+int tourCount = 0;
+
+// Add a new tour
+void addTour(int id, string destination, string date, int availableSeats) {
+    tours[tourCount++] = {id, destination, date, availableSeats};
+    cout << "Tour added successfully!\n";
+}
 
 int main(){
     BookingList bookings;
