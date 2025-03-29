@@ -59,6 +59,18 @@ class BookingList {
                 cout << "Booking not found!\n";
             }
         }
+        //To display booking
+        void displayBookings() {
+            if (!head) {
+                cout << "No bookings found!\n";
+                return;
+            }
+            Booking* temp = head;
+            while (temp) {
+                cout << "Booking ID: " << temp->bookingId << ", Customer: " << temp->customerName << ", Tour ID: " << temp->tourId << "\n";
+                temp = temp->next;
+            }
+        }
     };
 
 
