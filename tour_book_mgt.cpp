@@ -128,6 +128,18 @@ void deleteTour(int id) {
     cout << "Tour not found!\n";
 }
 
+// Display all tours
+void displayTours() {
+    if (tourCount == 0) {
+        cout << "No tours available!\n";
+        return;
+    }
+    for (int i = 0; i < tourCount; i++) {
+        cout << "Tour ID: " << tours[i].id << ", Destination: " << tours[i].destination
+             << ", Date: " << tours[i].date << ", Available Seats: " << tours[i].availableSeats << "\n";
+    }
+}
+
 int main(){
     BookingList bookings;
     int choice;
