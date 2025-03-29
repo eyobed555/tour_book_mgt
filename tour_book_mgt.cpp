@@ -65,7 +65,6 @@ class BookingList {
             } else {
                 cout << "Booking not found!\n";
             }
-        }
         //To display booking
         void displayBookings() {
             if (!head) {
@@ -98,6 +97,19 @@ Tour* searchTour(int id) {
         }
     }
     return nullptr;
+}
+
+// Update a tour
+void updateTour(int id, string destination, string date, int availableSeats) {
+    Tour* tour = searchTour(id);
+    if (tour) {
+        tour->destination = destination;
+        tour->date = date;
+        tour->availableSeats = availableSeats;
+        cout << "Tour updated successfully!\n";
+    } else {
+        cout << "Tour not found!\n";
+    }
 }
 
 int main(){
