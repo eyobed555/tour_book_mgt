@@ -1,4 +1,3 @@
-# tour_book_mgt
 # Tour Booking & Travel Package Management System
 #  Overview
 This C++ program is a simple Tour Booking and Travel Package Management System that allows users to manage tours and handle customer bookings. The system uses a combination of arrays (for tour storage) and linked lists (for booking management) to provide basic CRUD operations for tours and bookings.
@@ -69,7 +68,15 @@ Expand the data model with more fields (e.g., pricing, duration)
 Implement a graphical user interface
 
 Author
-[Group 4 members]
+[1.BETELHEM TADEGEGN                                                                          02O14/15
+2.EYOBED SISAY                                                                                02343/15
+3.KALAB BIRHANU                                                                               01651/15
+4.KEDIR GASHAW                                                                                02467/15
+5.MEKDES ADDIS                                                                                01672/15
+6.YOSEF ASEFA                                                                                 00145/15
+7.YOSEF GETNET                                                                                02891/15
+8.ZELALEM MEBRATU                                                                             02994/15
+9.YONAS KINDU                                                                                 00015/16 ]
 
 #  License
 This project is open-source and available under the MIT License.
